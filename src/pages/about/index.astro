@@ -1,0 +1,150 @@
+---
+import Page from "../../layouts/Page.astro";
+import { cn } from "../../utils/cn";
+const seo = {
+  title: "About • ScanHer",
+  description: "Who we are, our mission & vision.",
+  ogImage: "/og/about.jpg",
+};
+---
+
+<Page {...seo}>
+  <section
+    class="mx-auto max-w-[1680px] px-4 lg:px-20 py-12 lg:h-[70vh] flex flex-col justify-center"
+  >
+    <h1 class="font-display text-4xl text-brand-blue">Who We Are</h1>
+    <p class={cn("mt-4 text-gray-700 max-w-[51.3rem]")}>
+      ScanHer is a health-tech innovation built to fight late-stage cancer
+      diagnoses among women in Liberia and across Africa. We believe that every
+      woman — no matter where she lives — deserves access to affordable, timely,
+      and life-saving screenings for breast and cervical cancer. Our solution
+      combines portable devices, AI-powered detection, and community outreach to
+      bring early cancer screening closer to women, especially in underserved
+      areas. By equipping nurses and clinics with the right tools, we bridge the
+      diagnostic gap and give women a chance to act early.
+    </p>
+    <div class="pt-10 pb-[78px]">
+      <button
+        class="bg-[rgba(22,48,140,1)] text-white font-semibold text-base px-[18px] py-[8px] rounded-lg hover:bg-[rgba(22,48,140,0.8)]"
+        >Learn More</button
+      >
+    </div>
+  </section>
+
+  <section class="bg-[rgba(22,48,140,1)]">
+    <div
+      class="mx-auto max-w-[1680px] px-4 sm:px-20 py-11 sm:py-32 grid gap-[4.5rem] lg:grid-cols-2"
+    >
+      <article class="bg-[rgba(255,255,255,1)] p-20 max-sm:px-6">
+        <h3 class="font-semibold text-2xl text-[rgba(26,32,44,1)]">
+          Our Mission
+        </h3>
+        <p class="font-regular text-sm text-[rgba(26,32,44,1)] mt-3">
+          To save lives by making early detection of breast and cervical cancer
+          accessible, affordable, and stigma-free for women in low-resource
+          communities.
+        </p>
+      </article>
+
+      <article class="bg-[rgba(255,255,255,1)] p-20  max-sm:px-6">
+        <h3 class="font-semibold text-2xl text-[rgba(26,32,44,1)]">
+          Our Mission
+        </h3>
+        <p class="font-regular text-sm text-[rgba(26,32,44,1)] mt-3">
+          A future where no woman dies from preventable cancers because of late
+          diagnosis, lack of awareness, or inaccessibility of screening
+          services.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[1680px] px-4 sm:px-20 py-12">
+    <div class="max-w-[51.3rem]">
+      <h3 class="font-semibold text-3xl text-[rgba(22,48,140,1)] pb-[38px]">
+        Our Story
+      </h3>
+      <div class="flex flex-col gap-10">
+        <p>
+          In Liberia, more than 70% of cervical cancer cases are detected at
+          late stages, when treatment is costly and less effective. Rural
+          clinics often lack the power, equipment, and specialists needed for
+          proper screenings. Social stigma and low awareness make the problem
+          worse.
+        </p>
+        <p>
+          ScanHer was born out of this urgent need. Developed under the Orange
+          Summer Challenge Liberia Edition, our project is designed to break
+          these barriers — turning a smartphone into a life-saving tool through
+          innovative imaging, AI analysis, and nurse-led outreach.
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-6 max-w-[51.3rem]">
+      <h3 class="font-semibold text-xl">Our Approach</h3>
+      <ul class="list-disc list-inside pl-5 font-regular text-sm">
+        <li class="px-[10px]">
+          Community Screening: Portable devices used in clinics and outreach
+          events.
+        </li>
+        <li class="px-[10px]">
+          AI-Powered Detection: Offline diagnostic assistance that supports
+          nurses and health workers.
+        </li>
+        <li class="px-[10px]">
+          Health Education: Self-exam training, awareness campaigns, and
+          local-language resources.
+        </li>
+        <li class="px-[10px]">
+          Data & Insights: Secure dashboards for policymakers and NGOs to track
+          progress and risks
+        </li>
+      </ul>
+    </div>
+
+    <div class="pt-6 max-w-[51.3rem]">
+      <h3 class="font-semibold text-xl">Our Impact Goals</h3>
+      <ul class="list-disc list-inside pl-5 font-regular text-sm">
+        <li class="px-[10px]">
+          Increase early diagnosis rates of breast and cervical cancer by 50% in
+          pilot regions within 1 year.
+        </li>
+        <li class="px-[10px]">
+          Reduce the cost and travel burden for women seeking screenings.
+        </li>
+        <li class="px-[10px]">
+          Strengthen community trust in healthcare through awareness and
+          education.
+        </li>
+      </ul>
+    </div>
+
+    <div class="pt-6 max-w-[51.3rem]">
+      <h3 class="font-semibold text-xl">Meet Our Team</h3>
+      <ul class="list-disc list-inside pl-5 font-regular text-sm">
+        
+          Behind ScanHer is a passionate team of innovators, healthcare
+          advocates, and technologists dedicated to building a healthier future
+          for women.
+        <li class="px-[10px]">
+          Chester N. Cyrus – Team Lead – Operations Coordinator
+        </li>
+        <li class="px-[10px]">
+          Technical Lead – Hardware & Software Development Health Advisor 
+        </li>
+        <li class="px-[10px]">
+          Medical & Clinical Liaison UI/UX Designer
+        </li>
+        <li class="px-[10px]">
+          Engagement & Communications Lead
+        </li>
+      </ul>
+    </div>
+
+    <p class="pt-10 max-w-[51.3rem]">
+      Together, we combine medical expertise, design thinking, and grassroots
+      experience to deliver a solution that truly works for women.
+    </p>
+  </section>
+</Page>

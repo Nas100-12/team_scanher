@@ -1,0 +1,311 @@
+---
+import Page from "../layouts/Page.astro";
+import Hero from "../components/Hero.astro";
+
+const seo = {
+  title: "ScanHer • Early Detection, Saves Lives",
+  description:
+    "Affordable, AI-assisted screening for cervical and breast cancer.",
+  ogImage: "/og/home.jpg",
+};
+---
+
+<Page {...seo}>
+  <Hero />
+
+  <!-- Our Services -->
+  <section
+    class="max-w-[1680px] mx-auto px-4 lg:px-20 py-11 lg:pb-32 text-center"
+  >
+    <h2 class="font-display text-3xl md:text-[40px]">Our Services</h2>
+    <p class="mt-3 text-gray-600 md:max-w-[680px] mx-auto">
+      We are redefining women’s health by combining innovation, portability, and
+      education. Our services are designed to bring screening closer to women
+      everywhere—from rural clinics to outreach programs.
+    </p>
+
+    <!-- 3 cards -->
+    <div
+      class="mt-10 grid gap-[35px] md:grid-cols-1 lg:grid-cols-5 lg:gap-[35px] place-items-center"
+    >
+      <!-- Card 1 -->
+      <article class="max-w-[320px] text-left">
+        <div
+          class="w-[63px] h-[65px] rounded-2xl p-2 bg-[rgba(251,132,132,1)] -mb-3 ml-auto mr-auto"
+        >
+          <img
+            src="/images/community-screening.png"
+            alt="Community Screening"
+          />
+        </div>
+        <h3 class="text-xl pt-4 text-center">Community Screening</h3>
+        <p class="text-gray-600 mt-2 text-center">
+          Affordable breast and cervical cancer screenings at clinics and
+          outreach events.
+        </p>
+      </article>
+
+      <img src="/images/curved-line.png" alt="Line" class="hidden lg:block" />
+
+      <!-- Card 2 -->
+      <article class="max-w-[320px] text-left">
+        <div
+          class="w-[63px] h-[65px] rounded-2xl p-2 bg-[rgba(22,48,140,1)] -mb-3 ml-auto mr-auto"
+        >
+          <img src="/images/ai-detection.png" alt="AI-Powered Detection" />
+        </div>
+        <h3 class="text-xl pt-4 text-center">AI-Powered Detection</h3>
+        <p class="text-gray-600 mt-2 text-center">
+          Smartphone-based tools with offline AI analysis to support nurses and
+          health workers.
+        </p>
+      </article>
+      <img src="/images/curved-line.png" alt="Line" class="hidden lg:block" />
+
+      <!-- Card 3 -->
+      <article class="max-w-[320px] text-left">
+        <div
+          class="w-[63px] h-[65px] rounded-2xl p-2 bg-[rgba(151,125,241,1)] -mb-3 ml-auto mr-auto"
+        >
+          <img src="/images/health-education.png" alt="Health Education" />
+        </div>
+        <h3 class="text-xl pt-4 text-center">Health Education</h3>
+        <p class="text-gray-600 mt-2 text-center">
+          Self-exam training and awareness campaigns that empower women to take
+          charge of their health.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Device Explainer (deep blue band) -->
+  <section class="mt-16 lg:py-[9.5rem] bg-brand-blue text-white">
+    <div
+      class="max-w-[1680px] mx-auto px-4 lg:px-20 py-12 gap-10 lg:gap-[6.5rem] lg:py-16 flex flex-col md:flex-row lg:justify-between lg:items-center"
+    >
+      <!-- Left device card with rounded TR -->
+      <div
+        class="lg:w-1/3 mx-auto h-[30rem] lg:h-[566px] bg-[rgba(236,221,255,1)] rounded-tr-[121px] overflow-hidden mb-10 lg:mb-0"
+      >
+        <img
+          src="/images/scanHerDevice.png"
+          alt="ScanHer device"
+          class="w-full lg:h-full object-contain"
+        />
+      </div>
+
+      <!-- Right features -->
+      <div class="w-full max-w-[39.6rem] space-y-8">
+        <!-- Phone -->
+        <div
+          class="flex gap-4 flex-col lg:flex-row max-sm:items-center max-sm:text-center"
+        >
+          <div class="shrink-0 w-[37px] h-[37px] bg-white p-2 rounded-lg">
+            <img src="/icons/phone.png" alt="Phone" />
+          </div>
+          <div>
+            <h3 class="text-xl">Phone</h3>
+            <p class="text-sm font-light">
+              Acts as the camera + processing unit. Runs the imaging app (e.g.,
+              ScanHer), displays live preview, and executes AI inference
+              offline.
+            </p>
+          </div>
+        </div>
+
+        <!-- Lens -->
+        <div
+          class="flex gap-4 flex-col lg:flex-row max-sm:items-center max-sm:text-center"
+        >
+          <div class="shrink-0 w-[37px] h-[37px] bg-white p-2 rounded-lg">
+            <img src="/icons/lens.png" alt="Lens" />
+          </div>
+          <div>
+            <h3 class="text-xl">Lens (Colposcope Lens)</h3>
+            <p class="text-sm font-light">
+              Mounted in front of the phone’s camera. Provides optical
+              magnification and clarity so the cervix can be viewed in detail.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mounting -->
+        <div
+          class="flex gap-4 flex-col lg:flex-row max-sm:items-center max-sm:text-center"
+        >
+          <div class="shrink-0 w-[37px] h-[37px] bg-white p-2 rounded-lg">
+            <img src="/icons/mounting-clip.png" alt="Mounting" />
+          </div>
+          <div>
+            <h3 class="text-xl">Mounting Clips / Flat Plate</h3>
+            <p class="text-sm font-light">
+              Secure the phone into the case. Ensure the lens + LEDs are
+              precisely aligned with the phone’s camera sensor.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="hidden sm:flex gap-4 flex-col lg:flex-row max-sm:items-center max-sm:text-center"
+        >
+          <div class="shrink-0 w-[37px] h-[37px] bg-white p-2 rounded-lg">
+            <img src="/icons/handle.png" alt="Handle" />
+          </div>
+          <div>
+            <h3 class="text-xl">Handle</h3>
+            <p class="text-sm font-light">
+              Provides stability for the nurse/clinician while holding the
+              device. Keeps hands steady and allows comfortable positioning
+              during the exam.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="hidden sm:flex gap-4 flex-col lg:flex-row max-sm:items-center max-sm:text-center"
+        >
+          <div class="shrink-0 w-[37px] h-[37px] bg-white p-2 rounded-lg">
+            <img src="/icons/case.png" alt="Case" />
+          </div>
+          <div>
+            <h3 class="text-xl">Case</h3>
+            <p class="text-sm font-light">
+              Encases the phone and optical/light assembly. Holds components in
+              alignment and offers ergonomic stability for the user.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center sm:hidden">
+          <a href="" class="underline">View more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="max-w-[1680px] mx-auto px-4 lg:px-20 pt-11">
+    <h2
+      class="font-display text-center mt-[67px] text-2xl md:text-3xl lg:text-5xl"
+    >
+      Success Stories
+    </h2>
+
+    <!-- two images row -->
+    <div
+      class="mt-8 grid md:grid-cols-2 md:gap-[25px] lg:gap-[90px] items-center justify-center"
+    >
+      <img
+        src="/images/nurse.jpg"
+        alt="Happy client and daughter"
+        class="size-full max-h-[34rem] object-cover"
+        loading="lazy"
+      />
+      <img
+        src="/images/nurse-client.jpg"
+        alt="Nurse supporting client"
+        class="hidden md:block size-full max-h-[34rem] object-cover"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- testimonial cards -->
+    <div class="mt-10 sm:mt-24 mb-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card -->
+      <article class="rounded-xl bg-white shadow-[0_3px_2px_rgba(0,0,0,0.25)]">
+        <div class="px-5 pt-6 pb-5 space-y-5">
+          <div class="flex items-center gap-4">
+            <img
+              src="/images/head-image.png"
+              alt=""
+              class="w-[40px] h-[40px] rounded-full"
+            />
+            <div class="">
+              <div>
+                <h3 class="font-semibold text-[18px]">Decontee Kamara</h3>
+                <p class="text-sm">Nurse</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[#1A202C]">
+            I never imagined screening could be this simple and affordable.
+            ScanHer gave me peace of mind.
+          </p>
+        </div>
+      </article>
+
+      <article class="rounded-xl bg-white shadow-[0_3px_2px_rgba(0,0,0,0.25)]">
+        <div class="px-5 pt-6 pb-5 space-y-5">
+          <div class="flex items-center gap-4">
+            <img
+              src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ="
+              alt=""
+              class="w-[40px] h-[40px] rounded-full object-cover"
+            />
+            <div class="flex items-center gap-4">
+              <div>
+                <h3 class="font-semibold text-[18px]">Marwen Kaba</h3>
+                <p class="text-sm">Public Servant</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[#1A202C]">
+            Thanks to the outreach program, I was screened in my own community
+            without traveling miles away
+          </p>
+        </div>
+      </article>
+
+      <article class="rounded-xl bg-white shadow-[0_3px_2px_rgba(0,0,0,0.25)]">
+        <div class="px-5 pt-6 pb-5 space-y-5">
+          <div class="flex items-center gap-4">
+            <img
+              src="https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg"
+              alt=""
+              class="w-[40px] h-[40px] rounded-full object-cover"
+            />
+            <div class="flex items-center gap-4">
+              <div>
+                <h3 class="font-semibold text-[18px]">Joseph Freeman</h3>
+                <p class="text-sm">Nurse</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[#1A202C]">
+            I never imagined screening could be this simple and affordable.
+            ScanHer gave me and my wife peace of mind.
+          </p>
+        </div>
+      </article>
+
+      <!-- Third card (hidden on lg in your mobile comp, but visible on desktop if desired) -->
+      <!-- <article
+        class="rounded-xl bg-white shadow-[0_3px_2px_rgba(0,0,0,0.25)] sm:block hidden lg:hidden"
+      >
+        <div class="px-5 pt-6 pb-5 space-y-5">
+          <div class="flex items-center gap-4">
+            <img
+              src="/images/head-image.png"
+              alt=""
+              class="w-[40px] h-[40px] rounded-full"
+            />
+            <div class="flex justify-between">
+              <div>
+                <h3 class="font-semibold text-[18px]">Rejoice Favor</h3>
+                <p class="text-sm">Market Woman</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[#1A202C]">
+            The nurse explained everything clearly. I now encourage my friends
+            and sisters to get screened early.
+          </p>
+        </div>
+      </article> -->
+
+      <div class="flex justify-center sm:hidden">
+          <a href="" class="underline">View more</a>
+        </div>
+    </div>
+  </section>
+</Page>

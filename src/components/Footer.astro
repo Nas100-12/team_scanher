@@ -1,0 +1,159 @@
+---
+const year = Astro.props.year ?? new Date().getFullYear();
+
+const quickLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Success Stories", href: "/#success" },
+  { label: "Contact", href: "/contact" },
+];
+
+const resources = [
+  { label: "FAQs", href: "/faqs" },
+  { label: "Screening Guidelines", href: "/guidelines" },
+  { label: "Self-Exam Tips", href: "/self-exam-tips" },
+  { label: "Awareness Materials", href: "/awareness" },
+];
+
+const getInvolved = [
+  { label: "Partner With Us", href: "/partner" },
+  { label: "Support Our Work", href: "/support" },
+  { label: "Volunteer Programs", href: "/volunteer" },
+  { label: "Research & Data", href: "/research" },
+];
+---
+
+<footer class="mt-12 bg-brand-blue text-white">
+  <div
+    class="mx-auto w-full max-w-[1680px] lg:px-20 px-4
+           py-10 md:py-12 lg:py-16
+           grid gap-8
+           lg:grid-cols-[minmax(280px,520px)_1fr_1fr_1fr]"
+  >
+    <div class="max-w-[620px]">
+      <div class="flex items-center gap-3">
+        <a href="/" class="font-display text-xl text-brand-blue">
+        <img
+          src="/images/white-footer-logo.png"
+          alt="ScanHer logo"
+          class="h-10 w-auto"
+        />
+        <span class="sr-only">ScanHer</span>
+        </a>
+      </div>
+
+      <p class="mt-4 text-sm md:text-[15px] leading-relaxed text-white/90">
+        ScanHer is an innovative health-tech solution developed to fight
+        late-stage cancer diagnoses in Liberia. By equipping nurses and clinics
+        with AI-supported screening tools, we aim to save lives and strengthen
+        women’s healthcare systems from the ground up.
+      </p>
+
+      <div class="mt-6 flex flex-col gap-4">
+        <div class="flex items-center gap-3" aria-label="Follow us">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            aria-label="Facebook"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+            <img src="/icons/facebook-icon.png" alt="" class="h-5 w-5" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            aria-label="Instagram"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+            <img src="/icons/instagram-icon.png" alt="" class="h-5 w-5" />
+          </a>
+          <a
+            href="https://x.com"
+            target="_blank"
+            aria-label="X (Twitter)"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+            <img src="/icons/x-icon.png" alt="" class="h-5 w-5" />
+          </a>
+        </div>
+
+        <a
+          href="#"
+          class="inline-flex max-w-[12rem] items-center justify-center gap-2 rounded-xl border-2 border-white/80 px-5 py-3 text-sm font-medium hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 w-full sm:w-auto"
+        >
+          Download App
+          <img src="/icons/googleplay.png" alt="" class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+
+    <nav
+      class="grid gap-8 sm:grid-cols-3 lg:grid-cols-3 lg:col-span-3"
+      aria-label="Footer"
+    >
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <ul class="mt-4 space-y-3 text-sm text-white/90">
+          {
+            quickLinks.map((l) => (
+              <li>
+                <a
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+                  href={l.href}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold">Resources</h3>
+        <ul class="mt-4 space-y-3 text-sm text-white/90">
+          {
+            resources.map((l) => (
+              <li>
+                <a
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+                  href={l.href}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Get Involved -->
+      <div>
+        <h3 class="text-lg font-semibold">Get Involved</h3>
+        <ul class="mt-4 space-y-3 text-sm text-white/90">
+          {
+            getInvolved.map((l) => (
+              <li>
+                <a
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+                  href={l.href}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mx-auto w-full max-w-[1680px] px-4 lg:px-20">
+    <hr class="border-white/20" />
+  </div>
+
+  <div class="py-4 text-center text-xs text-white/80">
+    © {year} | ScanHer
+  </div>
+</footer>

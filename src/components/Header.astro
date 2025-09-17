@@ -1,0 +1,147 @@
+---
+const pathname = Astro.url.pathname;
+
+type Link = { href: string; label: string; icon: string; variant?: 'home' | 'circle' };
+const links: Link[] = [
+  { href: '/',        label: 'Home',    icon: '/icons/home_live_icon.png', variant: 'home' },
+  { href: '/about',   label: 'About',   icon: '/icons/about-icon.png',     variant: 'circle' },
+  { href: '/contact', label: 'Contact', icon: '/icons/contact-icon.png',   variant: 'circle' },
+];
+
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<header class="w-full lg:px-20">
+  <nav class="mx-auto flex items-center justify-between p-4">
+    <!-- Brand -->
+    <a href="/" class="font-display text-xl text-brand-blue">
+      <img src="/images/logo.png" alt="ScanHer logo" class="h-8 w-auto">
+    </a>
+
+    <!-- Desktop menu (lg and up) -->
+    <ul class="hidden lg:flex gap-6 opacity-90">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            class={`hover:text-brand-blue ${isActive(l.href) ? 'text-brand-coral font-medium' : ''}`}
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile/Tablet hamburger (shown < lg) -->
+    <button
+      aria-label="Open menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      class="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-md ring-1 ring-black/10 hover:bg-black/5"
+      data-menu-button
+    >
+      <!-- simple hamburger -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Slide-over menu -->
+  <div class="fixed inset-0 z-50 hidden" data-menu-root>
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/40 opacity-0 transition-opacity" data-menu-backdrop></div>
+
+    <!-- Panel -->
+    <aside
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      class="absolute inset-y-0 right-0 w-full max-w-[420px] bg-white shadow-xl translate-x-full transition-transform"
+      data-menu-panel
+    >
+      <!-- Header row with close X -->
+      <div class="flex items-center justify-end p-4">
+        <button
+          aria-label="Close menu"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-black/5"
+          data-menu-close
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-width="2" d="M6 6l12 12M18 6l-12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Links -->
+      <nav class="px-4 pb-8">
+        <ul class="divide-y divide-black/10">
+          {links.map((l) => (
+            <li>
+              <a
+                href={l.href}
+                class={`flex items-center gap-3 py-4 text-base ${
+                  isActive(l.href) ? 'text-brand-coral' : 'text-gray-900'
+                }`}
+              >
+                <!-- Icon styles -->
+                {
+                  l.variant === 'circle'
+                    ? (
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-black/70">
+                        <img src={l.icon} alt="" class="h-4 w-4" />
+                      </span>
+                    )
+                    : (
+                      <img src={l.icon} alt="" class="h-5 w-5" />
+                    )
+                }
+                <span>{l.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</header>
+
+<!-- tiny script to toggle -->
+<script type="module">
+  const root = document.querySelector('[data-menu-root]');
+  const openBtn = document.querySelector('[data-menu-button]');
+  const panel = document.querySelector('[data-menu-panel]');
+  const backdrop = document.querySelector('[data-menu-backdrop]');
+  const closeBtn = document.querySelector('[data-menu-close]');
+
+  const open = () => {
+    if (!root) return;
+    root.classList.remove('hidden');
+    // animate in
+    requestAnimationFrame(() => {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('translate-x-full');
+    });
+    openBtn?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('overflow-hidden');
+  };
+
+  const close = () => {
+    if (!root) return;
+    // animate out
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    openBtn?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+    // after transition, hide root
+    setTimeout(() => root.classList.add('hidden'), 250);
+  };
+
+  openBtn?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>

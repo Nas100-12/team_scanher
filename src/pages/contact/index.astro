@@ -1,0 +1,21 @@
+---
+import Page from '../../layouts/Page.astro';
+const seo = {
+  title: 'Contact • ScanHer',
+  description: 'Get in touch with the ScanHer team.',
+  ogImage: '/og/contact.jpg'
+};
+---
+<Page {...seo}>
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="font-display text-4xl text-brand-blue">Leave a message</h1>
+    <form action="https://formspree.io/f/your-id" method="POST" class="mt-8 grid gap-5">
+      <input required name="name" placeholder="Full name" class="border rounded-lg p-3" />
+      <input required name="phone" placeholder="Phone (WhatsApp preferred)" class="border rounded-lg p-3" />
+      <input required type="email" name="email" placeholder="Email" class="border rounded-lg p-3" />
+      <textarea required name="message" placeholder="Message" class="border rounded-lg p-3 min-h-[160px]"></textarea>
+      <button class="bg-brand-blue text-white rounded-lg px-5 py-3 w-fit">Submit</button>
+      <input type="text" name="_gotcha" class="hidden" aria-hidden="true" /> 
+    </form>
+  </section>
+</Page>

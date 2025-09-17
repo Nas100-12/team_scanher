@@ -1,0 +1,56 @@
+---
+import { cn } from "../utils/cn";
+
+const heroImg = "/images/hero-image.jpg";
+---
+
+<section
+  class={cn(
+    "w-full px-5 lg:px-20 py-10 lg:py-20 grid gap-10 lg:grid-cols-2 lg:items-center",
+    "max-w-[1680px] mx-auto"
+  )}
+>
+  <div class="lg:max-w-xl">
+    <h1
+      class="font-display text-[50px] leading-[1.1] sm:text-[60px] lg:text-[90px] lg:max-w-[38rem]"
+    >
+      <span class="text-brand-coral">Early</span>
+      <span class="text-brand-blue">Detection,</span>
+      <span class="text-brand-coral block">Saves Lives.</span>
+    </h1>
+
+    <p class="mt-4 text-[15px] md:text-base text-gray-600 font-body">
+      Breast and cervical cancer are two of the leading causes of death among
+      women in Liberia. Most cases are detected too late because screening tools
+      are expensive, scarce, and out of reach. ScanHer makes early detection
+      possible affordable, accessible, and powered by AI.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a
+        href="/about"
+        class="px-5 py-3 rounded-lg bg-brand-blue text-white hover:bg-brand-coral"
+        >Learn More</a
+      >
+      <a
+        href="#"
+        class="px-5 py-3 rounded-lg ring-2 ring-brand-blue text-brand-blue flex items-center gap-2 hover:ring-brand-coral"
+      >
+        Download App
+        <img src="/icons/googleplay.png" alt="" class="h-6 w-6" />
+      </a>
+    </div>
+  </div>
+
+  <figure
+    class="justify-self-stretch overflow-hidden rounded-tl-[72px] bg-[#F6F3FF] h-[300px] sm:h-[500px] lg:h-[600px] flex items-center"
+  >
+    <img
+      src={heroImg}
+      alt="Nurse showing results to client"
+      class="h-full w-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+  </figure>
+</section>
